@@ -10,6 +10,11 @@ name: Update Release Notes
 
 on:
   workflow_dispatch:  # Allows manual trigger
+    inputs:
+      version:
+        description: 'Semantic version to release. Ex: v1.14.0'
+        required: false
+        type: string
 
 jobs:
   release-notes-update:
@@ -30,8 +35,10 @@ jobs:
           # Go back to not clone within the repo.
           cd ..
 
-          # Need to retrieve the next milestone.
-          MILESTONE=v1.14.0
+          echo "My Version is: " + ${{ inputs.version }}
+
+          # Retrieve the latest milestone.
+          MILESTONE=$(curl -s https://api.github.com/repos/dell/csm/milestones | jq -r '.[].title')
 
           git clone https://${GITHUB_TOKEN}@github.com/falfaroc/change-log.git
           cd change-log
