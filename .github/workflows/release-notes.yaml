@@ -46,11 +46,6 @@ jobs:
             MILESTONE=${{ inputs.version }}
           fi
 
-          # # Retrieve the latest milestone.
-          # MILESTONE=$(curl -s https://api.github.com/repos/dell/csm/milestones | jq -r '.[].title')
-
-          echo "My Milestone is: " $MILESTONE
-
           git clone https://${GITHUB_TOKEN}@github.com/falfaroc/change-log.git
           cd change-log
           git checkout usr/falfaroc/release-notes
