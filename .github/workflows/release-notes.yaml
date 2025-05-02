@@ -27,6 +27,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         run: |
+          # Go back to not clone within the repo.
+          cd ..
+
           # Need to retrieve the next milestone.
           MILESTONE=v1.14.0
 
