@@ -35,10 +35,21 @@ jobs:
           # Go back to not clone within the repo.
           cd ..
 
-          echo "My Version is: " + ${{ inputs.version }}
+          MILESTONE=""
+          if [[ -z ${{ inputs.version }} ]]; then
+            # Retrieve the latest milestone.
+            echo "Retrieving the latest milestone..."
+            MILESTONE=$(curl -s https://api.github.com/repos/dell/csm/milestones | jq -r '.[].title')
+          else
+            # Use the provided version.
+            echo "Using the provided version..."
+            MILESTONE=${{ inputs.version }}
+          fi
 
-          # Retrieve the latest milestone.
-          MILESTONE=$(curl -s https://api.github.com/repos/dell/csm/milestones | jq -r '.[].title')
+          # # Retrieve the latest milestone.
+          # MILESTONE=$(curl -s https://api.github.com/repos/dell/csm/milestones | jq -r '.[].title')
+
+          echo "My Milestone is: " $MILESTONE
 
           git clone https://${GITHUB_TOKEN}@github.com/falfaroc/change-log.git
           cd change-log
