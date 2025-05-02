@@ -69,7 +69,7 @@ jobs:
           sed -i "s/milestone: \(.*\)*/milestone: \"$MILESTONE\"/g" config.yaml
 
           # Generate the release notes.
-          ./bin/change-log generate
+          ./bin/change-log generate --release-notes
 
           # Update release notes.
           ./bin/change-log release --changesPath area --directory ../csm-docs
