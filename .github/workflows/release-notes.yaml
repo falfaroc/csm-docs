@@ -23,7 +23,7 @@ jobs:
         with:
           go-version: "1.24"
 
-      - name: Clone io-tools/change-log
+      - name: Clone change logs
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         run: |
@@ -51,9 +51,15 @@ jobs:
 
           make build
           sed -i "s/milestone: \(.*\)*/milestone: \"$MILESTONE\"/g" config.yaml
-          ./bin/change-log
 
-          ls -la area/
+          # Generate the release notes.
+          ./bin/change-log generate
+
+          # Update release notes.
+          ./bin/change-log release --changesPath area --directory ../csm-docs
+
+          ls ../
+
       # # Needed for signing commits using Github App tokens
       # # See: https://github.com/peter-evans/create-pull-request/blob/main/docs/concepts-guidelines.md#commit-signing
       # - name: Generate GitHub App Token
