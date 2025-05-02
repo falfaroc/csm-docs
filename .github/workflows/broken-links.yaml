@@ -1,8 +1,8 @@
 name: Check Broken Links
 
 on:
-  push:
-    branches: [ main ]
+  # push:
+  #   branches: [ main ]
   pull_request:
     branches: [ main, release-* ]
 jobs:
