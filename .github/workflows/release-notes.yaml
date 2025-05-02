@@ -36,7 +36,7 @@ jobs:
           cd ..
 
           MILESTONE=""
-          if [[ -z ${{ inputs.version }} ]]; then
+          if [[ -z "${{ inputs.version }}" ]]; then
             # Retrieve the latest milestone.
             echo "Retrieving the latest milestone..."
             MILESTONE=$(curl -s https://api.github.com/repos/dell/csm/milestones | jq -r '.[].title')
