@@ -46,7 +46,7 @@ jobs:
             MILESTONE=${{ inputs.version }}
           fi
 
-          git clone https://${GITHUB_TOKEN}@github.com/falfaroc/change-log.git
+          git clone https://${GITHUB_TOKEN}@github.com/dell/change-log.git
           cd change-log
           git checkout usr/falfaroc/release-notes
 
