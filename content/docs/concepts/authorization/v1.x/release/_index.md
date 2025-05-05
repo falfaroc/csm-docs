@@ -13,13 +13,15 @@ Description: >
 {{< message text="5" >}}
 {{% /pageinfo %}}
 
+
 ### New Features/Changes
 
-- [#1561 - [FEATURE]: Added support for Kubernetes 1.32 ](https://github.com/dell/csm/issues/1561)
-- [#1563 - [FEATURE]: Support KubeVirt for CSM modules](https://github.com/dell/csm/issues/1563)
-- [#1611 - [FEATURE]: Added support for PowerScale 9.10](https://github.com/dell/csm/issues/1611)
+- [#1750 - [FEATURE]: Kubernetes 1.33 Qualification](https://github.com/dell/csm/issues/1750)
 
 ### Fixed Issues
+
+- [#1732 - [BUG]: Updating approveSDC in tenant CR doesn't reflect in backend](https://github.com/dell/csm/issues/1732)
+- [#1804 - [BUG]: Support multiple sidecar headers in the Authorization Proxy Server](https://github.com/dell/csm/issues/1804)
 
 ### Known Issues
 | Issue | Workaround |
