@@ -59,8 +59,6 @@ jobs:
             - area/csm-resiliency
             - area/csm-authorization
             - area/csm-observability
-          #  - area/csm-encryption
-          #  - area/csm-application-mobility
             - area/installation-wizard
             - area/csm-operator' >> config.yaml
 
