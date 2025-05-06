@@ -48,6 +48,7 @@ jobs:
 
           git clone https://${GITHUB_TOKEN}@github.com/dell/change-log.git
           cd change-log
+          git checkout usr/falfaroc/retrieve-latest-versions
 
           # Update labels for release Notes
           echo '  - area/csi-powermax                                   
@@ -66,10 +67,10 @@ jobs:
           sed -i "s/milestone: \(.*\)*/milestone: \"$MILESTONE\"/g" config.yaml
 
           # Generate the release notes.
-          ./bin/change-log generate --release-notes
+          ./bin/csm-change-log generate --release-notes
 
           # Update release notes.
-          ./bin/change-log update --contentPath out/area --docsPath ../csm-docs
+          ./bin/csm-change-log update --contentPath out/area --docsPath ../csm-docs
 
           # Clean up change-log directory.
           cd ../
