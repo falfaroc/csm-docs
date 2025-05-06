@@ -12,7 +12,7 @@ on:
   workflow_dispatch:  # Allows manual trigger
     inputs:
       version:
-        description: 'Semantic version to release. Ex: v1.14.0'
+        description: 'Semantic version of the latest Milestone. If omitted, the latest Milestone will be retrieved from https://github.com/dell/csm/milestones. Ex: v1.14.0'
         required: false
         type: string
 
