@@ -48,7 +48,6 @@ jobs:
 
           git clone https://${GITHUB_TOKEN}@github.com/dell/change-log.git
           cd change-log
-          git checkout usr/falfaroc/retrieve-latest-versions
 
           # Update labels for release Notes
           echo '  - area/csi-powermax                                   
