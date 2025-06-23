@@ -13,7 +13,7 @@ on:
 
 jobs:
   csi-sidecars-update:
-    uses: falfaroc/common-github-actions/.github/workflows/go-version-workflow.yaml@usr/falfaroc/automate-sidecar-versions
+    uses: falfaroc/common-github-actions/.github/workflows/csi-sidecars-update.yaml@usr/falfaroc/automate-sidecar-versions
     name: CSI Sidecars Update
     secrets: inherit
 
