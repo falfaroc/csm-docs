@@ -12,7 +12,6 @@ on:
   workflow_dispatch:  # Allows manual trigger
 
 jobs:
-  # go version update
   csi-sidecars-update:
     uses: falfaroc/common-github-actions/.github/workflows/go-version-workflow.yaml@usr/falfaroc/automate-sidecar-versions
     name: CSI Sidecars Update
