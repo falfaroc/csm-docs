@@ -10,11 +10,11 @@ name: Update CSI Sidecars
 
 on:
   workflow_dispatch:  # Allows manual trigger
-  schedule:
-    - cron: '0 0 * * 3'  # Runs every Wednesday at Midnight
+  # schedule:
+  #   - cron: '0 0 * * 3'  # Runs every Wednesday at Midnight
 
 jobs:
   csi-sidecars-update:
-    uses: dell/common-github-actions/.github/workflows/csi-sidecars-update.yaml@main
+    uses: falfaroc/common-github-actions/.github/workflows/csi-sidecars-update.yaml@usr/falfaroc/fix-sidecar-action
     name: CSI Sidecars Update
     secrets: inherit
