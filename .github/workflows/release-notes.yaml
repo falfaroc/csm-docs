@@ -66,27 +66,27 @@ jobs:
           sed -i "s/milestone: \(.*\)*/milestone: \"$MILESTONE\"/g" config.yaml
 
           # Generate the release notes.
-          ./bin/csm-change-log generate --release-notes
+          ./bin/csm-change-log generate
 
           # Update release notes.
-          ./bin/csm-change-log update --contentPath out/area --docsPath ../csm-docs
+          ./bin/csm-change-log update --contentPath out/ --docsPath ../csm-docs
 
           # Clean up change-log directory.
           cd ../
           rm -rf change-log
 
-      - uses: actions/create-github-app-token@v2.0.5
-        id: generate-token
-        with:
-          app-id: ${{ vars.CSM_RELEASE_APP_ID }}
-          private-key: ${{ secrets.CSM_RELEASE_APP_PRIVATE_KEY }}
+      # - uses: actions/create-github-app-token@v2.0.5
+      #   id: generate-token
+      #   with:
+      #     app-id: ${{ vars.CSM_RELEASE_APP_ID }}
+      #     private-key: ${{ secrets.CSM_RELEASE_APP_PRIVATE_KEY }}
 
       # Must enable "allow GitHub Actions to create pull requests" setting
       # Author defaults to the user who triggered the workflow run
       - name: Create pull request
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ steps.generate-token.outputs.token }}
+          # token: ${{ steps.generate-token.outputs.token }}
           branch: "docs/relnotes-update"
           commit-message: "Update Release Notes"
           title: "Update Release Notes"
