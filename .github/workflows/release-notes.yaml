@@ -46,7 +46,8 @@ jobs:
             MILESTONE=${{ inputs.version }}
           fi
 
-          git clone -b usr/falfaroc/add-full-release-update https://${GITHUB_TOKEN}@github.com/dell/csm-change-log.git
+          git clone https://${GITHUB_TOKEN}@github.com/dell/csm-change-log.git
+          git checkout usr/falfaroc/add-full-release-update
           cd csm-change-log
 
           # Update labels for release Notes
