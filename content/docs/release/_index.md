@@ -20,55 +20,16 @@ Description: >
 > * <span><span/>{{< message text="11" >}}
 > * <span><span/>{{< message text="12" >}}
 
-## Release Notes for v1.14.0
+## Release Notes for v1.14.1
 
 ### New Features/Changes
 
-- [#1614 - [FEATURE]: CSM PowerMax - Mount credentials secret to the reverse-proxy](https://github.com/dell/csm/issues/1614)
-- [#1743 - [FEATURE]: Add support for PowerScale 9.11](https://github.com/dell/csm/issues/1743)
-- [#1744 - [FEATURE]: Add support for Unity 5.5](https://github.com/dell/csm/issues/1744)
-- [#1748 - [FEATURE]: CSM PowerMax - Multi-Availability Zone (AZ) support with multiple storage systems - dedicated storage systems in each AZ](https://github.com/dell/csm/issues/1748)
-- [#1749 - [FEATURE]: CSM Operator - CSM Operator must manage the CRD only on the K8S cluster where the Operator is deployed](https://github.com/dell/csm/issues/1749)
-- [#1750 - [FEATURE]: Kubernetes 1.33 Qualification](https://github.com/dell/csm/issues/1750)
-- [#1751 - [FEATURE]: CSM RBAC rules](https://github.com/dell/csm/issues/1751)
-- [#1752 - [FEATURE]: CSM PowerFlex - Expose the SFTP settings to automatically pull the scini.ko kernel module](https://github.com/dell/csm/issues/1752)- 
-- [#1753 - [FEATURE]: CSM PowerStore - Host Registration for PowerStore Metro](https://github.com/dell/csm/issues/1753)
-- [#1755 - [FEATURE]: CSM Observability - Grafana Migration from Angular JS to React](https://github.com/dell/csm/issues/1755)
-- [#1758 - [FEATURE]: CSM PowerStore - Multiple NAS Servers Support](https://github.com/dell/csm/issues/1758)
-- [#1844 - [FEATURE]: Add Openshift Virtualization support for resiliency module](https://github.com/dell/csm/issues/1844)
-- [#1850 - [FEATURE]: Controller reattach failover PV to PVC automatically on stretched cluster](https://github.com/dell/csm/issues/1850)
-- [#1862 - [FEATURE]: CSM Replication - Add claimRef to the target PV](https://github.com/dell/csm/issues/1862)
-- [#1882-  [FEATURE]: Metro Replication Qualification - Support PowerMax and PowerStore with OpenShift Virtualization](https://github.com/dell/csm/issues/1882)
+- [#1942 - [FEATURE]: Release support for CSM 1.14.1](https://github.com/dell/csm/issues/1942)
 
 ### Fixed Issues
 
-- [#1732 - [BUG]: Updating approveSDC in tenant CR doesn't reflect in backend](https://github.com/dell/csm/issues/1732)
-- [#1804 - [BUG]: Support multiple sidecar headers in the Authorization Proxy Server](https://github.com/dell/csm/issues/1804)
-- [#1740 - [BUG]: CSI PowerFlex does not list volumes from non-default systems](https://github.com/dell/csm/issues/1740)
-- [#1774 - [BUG]: CSI-PowerFlex - DriverConfigMap is using hard-coded value](https://github.com/dell/csm/issues/1774)
-- [#1782 - [BUG]: Pods Stuck in Terminating State After PowerFlex CSI Node Pod Restart When Deployments Share Same Node](https://github.com/dell/csm/issues/1782)
-- [#1841 - [BUG]: "unable to get node list" error="csinodes.storage.k8s.io is forbidden](https://github.com/dell/csm/issues/1841)
-- [#1858 - [BUG]: Resiliency Tests Fail on GOARCH=386 Due to Type Mismatch in gofsutil (statfs.Bsize)](https://github.com/dell/csm/issues/1858)
-- [#1689 - [BUG]: Auto select protocol makes the node driver to crash](https://github.com/dell/csm/issues/1689)
-- [#1698 - [BUG]: 1.13 documentation | PowerMax | CSI PowerMax Reverse Proxy](https://github.com/dell/csm/issues/1698)
-- [#1711 - [BUG]: Unable to provision PowerMax Metro volumes with replication module not enabled](https://github.com/dell/csm/issues/1711)
-- [#1725 - [BUG]: Scale test fails with powermax nvmetcp protocol when X_CSI_TRANSPORT_PROTOCOL= ""](https://github.com/dell/csm/issues/1725)
-- [#1760 - [BUG]: [csi-powermax]: Yaml error in configmap generation](https://github.com/dell/csm/issues/1760)
-- [#1769 - [BUG]: PowerMax node pods are crashing even though the second array is reachable](https://github.com/dell/csm/issues/1769)
-- [#1826 - [BUG]: PowerMax CSI Driver attempts to create Port Group with Mixed FC and NVMe/FC Ports](https://github.com/dell/csm/issues/1826)
-- [#1870 - [BUG]: PowerMax Resiliency E2E Tests Failing Due to Incorrect Image Patch in Driver Node Pod](https://github.com/dell/csm/issues/1870)
-- [#1775 - [BUG]: CSI+Rep using Operator for PMAX failing during deployment.](https://github.com/dell/csm/issues/1775)
-- [#1726 - [BUG]: Panic Error During Volume Expansion When Hard Limit is Not Set for CSI PowerScale Driver](https://github.com/dell/csm/issues/1726)
-- [#1763 - [BUG]: Cloned PVC remains in a Pending state when cloning a large PVC in PowerScale](https://github.com/dell/csm/issues/1763)
-- [#1773 - [BUG]: gopowerscale CopyIsiVolume* functions ignoring error cases](https://github.com/dell/csm/issues/1773)
-- [#1823 - [BUG]: Powerscale CSI driver not setting snapshot restoreSize field](https://github.com/dell/csm/issues/1823)
-- [#1714 - [BUG]: PowerStore CSI driver version 2.12 - only supports the default interface for iSCSI discovery. ](https://github.com/dell/csm/issues/1714)
-- [#1729 - [BUG]: [CSI-Powerstore] Clarify protocol value use in PV](https://github.com/dell/csm/issues/1729)
-- [#1845 - [BUG]: PowerStore driver 2.12 error with OCP 4.14 on NVMe](https://github.com/dell/csm/issues/1845)
-- [#1717 - [BUG]: CSM Unity XT protocol/host registration documentation is not clear](https://github.com/dell/csm/issues/1717)
-- [#1736 - [BUG]: failed to provision volume with StorageClass error generating accessibility requirements: no available topology found](https://github.com/dell/csm/issues/1736)
-- [#1762 - [BUG]: CSM Operator samples are incomplete](https://github.com/dell/csm/issues/1762)
-- [#1861 - [BUG]: Update the OTEL image version in operator and helm sample files](https://github.com/dell/csm/issues/1861)
+- [#1939 - [BUG]: NVMe/TCP mounts fail on OCP 4.19/RHEL 9.6 having NVMe CLI v2.11.0](https://github.com/dell/csm/issues/1939)
+- [#1957 - [BUG]: Powermax NVMe volumes not reattached after pod deletion](https://github.com/dell/csm/issues/1957)
 
 ### Known Issues
 
