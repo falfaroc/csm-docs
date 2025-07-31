@@ -46,6 +46,8 @@ jobs:
             MILESTONE=${{ inputs.version }}
           fi
 
+          echo "Token is $GITHUB_TOKEN"
+
           git clone https://${GITHUB_TOKEN}@github.com/dell/csm-change-log.git
           git checkout usr/falfaroc/add-full-release-update
           cd csm-change-log
