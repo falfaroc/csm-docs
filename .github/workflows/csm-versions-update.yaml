@@ -15,6 +15,7 @@ on:
 
 jobs:
   csm-versions-update:
-    uses: dell/common-github-actions/.github/workflows/csm-versions-update.yaml@main
+    # uses: dell/common-github-actions/.github/workflows/csm-versions-update.yaml@main
+    uses: falfaroc/common-github-actions/.github/workflows/csm-versions-update.yaml@usr/falfaroc/test-update-docs
     name: CSI Sidecars Update
     secrets: inherit
